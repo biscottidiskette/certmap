@@ -29,7 +29,7 @@
 
 ## Known Bugs — Needs Fixing
 
-- [ ] Paper Chaser Risk scoring formula is miscalibrated — additive from zero hits ceiling
+- [X] Paper Chaser Risk scoring formula is miscalibrated — additive from zero hits ceiling
   issues and the LLM interprets it inconsistently. Current formula gives 72 for a stack
   of 3 hands-on and 1 MCQ cert which is too low. Needs a ratio-based formula:
   (hands-on / total) * 100, adjusted for bonuses, rather than additive point accumulation.
