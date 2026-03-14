@@ -123,13 +123,32 @@ Count the distinct track field values across ALL certs (owned and planned).
 Bonus +5 if certs show clear difficulty progression (entry → mid → senior) within primary track.
 
 DIMENSION 4 — paperChaserRisk (0-100, higher = less paper chasing)
-Count examType field values across ALL certs.
-- hands-on count: each scores +12 points (base 0, ceiling 100)
-- hybrid count: each scores +8 points
-- mcq count: each scores +3 points
-If hands-on certs outnumber mcq certs: bonus +10.
-If all certs are hands-on or hybrid: score 100.
-If all certs are mcq: score 20 maximum regardless of count.
+Use the examType field for every cert across ALL certs (owned and planned).
+Calculate using this exact ratio formula — do not deviate:
+
+Step 1 — Count:
+  hands_on = number of certs where examType is "hands-on"
+  hybrid = number of certs where examType is "hybrid"
+  mcq = number of certs where examType is "mcq"
+  total = total number of certs
+
+Step 2 — Weighted ratio:
+  weighted_score = ((hands_on * 1.0) + (hybrid * 0.6) + (mcq * 0.1)) / total
+  base = round(weighted_score * 100)
+
+Step 3 — Adjustments (apply in order, floor 0, ceiling 100):
+  If all certs are hands-on or hybrid: set base to 100
+  If all certs are mcq: set base to 15 regardless of count
+  If hands-on > mcq: add 5
+  If mcq > hands-on: subtract 10
+
+Step 4 — Return the final value as paperChaserRisk.
+
+Example: 3 hands-on, 1 mcq, 0 hybrid, total 4
+  weighted = ((3 * 1.0) + (0 * 0.6) + (1 * 0.1)) / 4 = 3.1 / 4 = 0.775
+  base = 78
+  hands-on > mcq: +5
+  final = 83
 
 DIMENSION 5 — burnoutRisk (0-100, higher = more sustainable / lower burnout risk)
 Only consider PLANNED certs (owned: false) for burnout assessment.
