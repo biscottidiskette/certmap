@@ -54,7 +54,7 @@ function ScoreDimension({ label, value }) {
           <div
             className="score-dim__fill"
             style={{
-              width: `${displayValue}%`,
+              width: `${Math.max(displayValue, 2)}%`,
               background: color,
             }}
           />

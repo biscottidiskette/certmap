@@ -136,6 +136,7 @@ Grade the roadmap on these five dimensions (each scored 0-100, higher is better)
 
 Overall grade rules:
 - Average all seven subscores into an overall percentage
+- If all certs are owned, still score all dimensions based on the quality of the stack — do not return zeros. Cost/ROI should reflect the value of what was spent, burnout reflects what was endured, etc.
 - Map to letter grade: 90-100 = A, 80-89 = B, 70-79 = C, 60-69 = D, below 60 = F
 - narrative: 2-3 sentences. Be direct and specific. Name the certs. Do not be generic.
 
