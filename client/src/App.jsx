@@ -109,7 +109,6 @@ export default function App() {
     gradeTimerRef.current = setTimeout(async () => {
       try {
         const result = await gradeRoadmap(roadmapSnapshot)
-        console.log("certUnlocks:", result.certUnlocks)
         setGradeData(result)
       } catch (err) {
         console.error("Grade failed:", err.message)
