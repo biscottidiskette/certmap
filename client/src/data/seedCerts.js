@@ -515,5 +515,27 @@ export const seedCerts = [
     ],
     tags: ["red", "hands-on", "malware", "evasion", "course-cert"],
     description: "MalDev Academy issues certificates of completion for its malware development curriculum. Growing community recognition in offensive security circles. Not a traditional proctored certification — signals advanced malware development capability rather than a formal credential."
+  } ,
+  {
+    id: "tcm-papa",
+    name: "TCM PAPA",
+    fullName: "TCM Security Practical AI Pentesting Associate",
+    vendor: "TCM Security",
+    track: "red",
+    price: 249,
+    examType: "hands-on",
+    ecosystemLocked: false,
+    studyWeeks: 6,
+    market: 45,
+    difficulty: 3,
+    expires: false,
+    renewYears: null,
+    roles: [
+      "AI Security Researcher",
+      "Penetration Tester",
+      "Red Team Analyst"
+    ],
+    tags: ["red", "hands-on", "ai-security", "offensive", "entry-mid"],
+    description: "TCM Security's practical AI pentesting certification. Covers offensive security techniques targeting AI and LLM-based systems. Newer cert in a rapidly growing niche with increasing market relevance."
   }
 ]

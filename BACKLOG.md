@@ -49,6 +49,9 @@
 - [ ] Edit cert functionality — allow manual correction of fetched cert data before adding
   to library, addresses accuracy issues with smaller vendors
 - [ ] Auth on API endpoints — required before public deployment, currently open
+- [ ] Per-cert intent/notes field on roadmap items — free text context 
+  sent to grader prompt, allows grader narrative to acknowledge strategic 
+  reasoning behind outlier cert choices without affecting subscores
 
 ---
 
