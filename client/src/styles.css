@@ -155,8 +155,8 @@ body::before {
 .app-body {
   display: grid;
   grid-template-columns: 360px 1fr;
-  height: calc(100vh - 56px);
-  overflow: hidden;
+  min-height: calc(100vh - 56px);
+  overflow: visible;
 }
 
 .panel-left {
@@ -169,7 +169,7 @@ body::before {
 .panel-right {
   display: flex;
   flex-direction: column;
-  overflow-y: auto;
+  overflow-y: visible;
   padding: 24px;
   gap: 24px;
 }
