@@ -201,6 +201,30 @@ Return this exact JSON shape:
     })
   }
 
+  // Normalise certUnlocks keys — LLM returns short names instead of ids.
+  // Build a lookup map from name variants to cert id and remap.
+  if (gradeData.certUnlocks && typeof gradeData.certUnlocks === "object") {
+    const nameToId = {}
+    roadmap.forEach((cert) => {
+      // Map every reasonable variant the LLM might use as a key
+      nameToId[cert.name.toLowerCase()]     = cert.id
+      nameToId[cert.id.toLowerCase()]       = cert.id
+      nameToId[cert.fullName.toLowerCase()] = cert.id
+    })
+
+    const normalised = {}
+    Object.entries(gradeData.certUnlocks).forEach(([key, value]) => {
+      const matched = nameToId[key.toLowerCase()]
+      if (matched) {
+        normalised[matched] = value
+      } else {
+        // Keep unmatched keys as-is rather than silently drop them
+        normalised[key] = value
+      }
+    })
+    gradeData.certUnlocks = normalised
+  }
+
   // Validate required fields
   const requiredFields = [
     "grade", "subscores", "narrative",
