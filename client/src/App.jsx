@@ -90,6 +90,13 @@ export default function App() {
     healthCheck().then((online) => setServerOnline(online))
   }, [])
 
+  // ── Grade on mount if roadmap already exists ──────────────────────────────
+  useEffect(() => {
+    if (roadmapWithOwned.length > 0) {
+      triggerGrade(roadmapWithOwned)
+    }
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   // ── Trigger grading ───────────────────────────────────────────────────────
   // Debounced — waits GRADE_DEBOUNCE_MS after last change before calling API
   const triggerGrade = useCallback((roadmapSnapshot) => {
