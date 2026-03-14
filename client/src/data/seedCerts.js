@@ -231,7 +231,7 @@ export const seedCerts = [
     fullName: "GIAC Certified Incident Handler",
     vendor: "SANS/GIAC",
     track: "blue",
-    price: 979,
+    price: 8750,
     examType: "mcq",
     ecosystemLocked: true,
     studyWeeks: 14,
@@ -246,7 +246,7 @@ export const seedCerts = [
       "DFIR Analyst"
     ],
     tags: ["blue", "incident-response", "mcq", "dfir", "mid-level"],
-    description: "Well recognised GIAC cert covering incident handling and response. SANS-backed credibility. High cost relative to alternatives is a notable ROI consideration."
+    description: "Well recognised GIAC cert covering incident handling and response. SANS-backed credibility. Price includes mandatory proprietary training — exam is written against SANS course material exclusively."
   },
   {
     id: "sans-gcfa",
@@ -254,7 +254,7 @@ export const seedCerts = [
     fullName: "GIAC Certified Forensic Analyst",
     vendor: "SANS/GIAC",
     track: "blue",
-    price: 979,
+    price: 8750,
     examType: "mcq",
     ecosystemLocked: true,
     studyWeeks: 14,
@@ -269,7 +269,7 @@ export const seedCerts = [
       "Incident Responder"
     ],
     tags: ["blue", "forensics", "mcq", "dfir", "mid-senior"],
-    description: "GIAC forensics cert covering advanced incident response and digital forensics. Strong market signal in DFIR-focused roles. SANS pricing is a significant cost factor."
+    description: "GIAC forensics cert covering advanced incident response and digital forensics. Strong market signal in DFIR-focused roles. Price includes mandatory proprietary training — exam is written against SANS course material exclusively."
   },
   {
     id: "sans-grem",
@@ -277,7 +277,7 @@ export const seedCerts = [
     fullName: "GIAC Reverse Engineering Malware",
     vendor: "SANS/GIAC",
     track: "red",
-    price: 979,
+    price: 8750,
     examType: "mcq",
     ecosystemLocked: true,
     studyWeeks: 16,
@@ -292,7 +292,7 @@ export const seedCerts = [
       "DFIR Analyst"
     ],
     tags: ["red", "malware", "reverse-engineering", "mcq", "expert"],
-    description: "Elite GIAC cert in malware reverse engineering. One of the most respected technical certs in the industry for malware and threat research roles."
+    description: "Elite GIAC cert in malware reverse engineering. One of the most respected technical certs in the industry. Price includes mandatory proprietary training — exam is written against SANS course material exclusively."
   },
   {
     id: "tcm-pmrp",
@@ -300,7 +300,7 @@ export const seedCerts = [
     fullName: "TCM Security Practical Malware Research Professional",
     vendor: "TCM Security",
     track: "red",
-    price: 300,
+    price: 499,
     examType: "hands-on",
     ecosystemLocked: false,
     studyWeeks: 10,
