@@ -8,42 +8,48 @@
 /* ─── Design tokens ────────────────────────────────────────────────────────── */
 
 :root {
-  /* Backgrounds */
-  --bg-base:        #0d0f12;
-  --bg-surface:     #13161b;
-  --bg-elevated:    #1a1e25;
-  --bg-hover:       #1f242d;
+  /* Backgrounds — two-tone */
+  --bg-base:        #F2E8D5;
+  --bg-surface:     #EDE0C4;
+  --bg-elevated:    #E5D5B0;
+  --bg-hover:       #DECA9E;
+
+  /* Chrome — dark chocolate for header, panels, sidebar */
+  --bg-chrome:      #2C1A0E;
+  --bg-chrome-elevated: #3D1F0D;
+  --bg-chrome-hover: #4A2710;
 
   /* Borders */
-  --border-subtle:  #1e2330;
-  --border-default: #252c3a;
-  --border-strong:  #2e3848;
+  --border-subtle:  #D4C09A;
+  --border-default: #C4A87A;
+  --border-strong:  #A8845A;
+  --border-chrome:  #5C3318;
 
-  /* Brand */
-  --green:          #00e676;
-  --green-dim:      #00c853;
-  --green-glow:     rgba(0, 230, 118, 0.15);
-  --green-muted:    rgba(0, 230, 118, 0.06);
+  /* Brand — biscotti orange */
+  --green:          #C47B2E;
+  --green-dim:      #A8621E;
+  --green-glow:     rgba(196, 123, 46, 0.20);
+  --green-muted:    rgba(196, 123, 46, 0.10);
 
-  /* Tracks */
-  --track-red:      #ff5252;
-  --track-blue:     #448aff;
-  --track-grc:      #ffab40;
-  --track-mgmt:     #ce93d8;
-  --track-cloud:    #40c4ff;
+  /* Tracks — readable on cream */
+  --track-red:      #B03A2A;
+  --track-blue:     #2A5F8A;
+  --track-grc:      #C47B2E;
+  --track-mgmt:     #7A4F8A;
+  --track-cloud:    #2A7A6E;
 
-  /* Semantic */
-  --grade-a:        #00e676;
-  --grade-b:        #69f0ae;
-  --grade-c:        #ffeb3b;
-  --grade-d:        #ff9800;
-  --grade-f:        #ff5252;
+  /* Semantic grades */
+  --grade-a:        #2E7D32;
+  --grade-b:        #558B2F;
+  --grade-c:        #C47B2E;
+  --grade-d:        #BF6000;
+  --grade-f:        #B03A2A;
 
-  /* Text */
-  --text-primary:   #e8eaf0;
-  --text-secondary: #8892a4;
-  --text-muted:     #4a5568;
-  --text-accent:    #00e676;
+  /* Text — dark brown on cream */
+  --text-primary:   #1E0E05;
+  --text-secondary: #5C3A1E;
+  --text-muted:     #A8845A;
+  --text-accent:    #C47B2E;
 
   /* Typography */
   --font-mono:      'Space Mono', 'Courier New', monospace;
@@ -84,18 +90,7 @@ body {
 
 /* Subtle scanline overlay — adds depth without being distracting */
 body::before {
-  content: '';
-  position: fixed;
-  inset: 0;
-  background: repeating-linear-gradient(
-    0deg,
-    transparent,
-    transparent 2px,
-    rgba(0, 0, 0, 0.03) 2px,
-    rgba(0, 0, 0, 0.03) 4px
-  );
-  pointer-events: none;
-  z-index: 9999;
+  content: none;
 }
 
 /* ─── Scrollbar ──────────────────────────────────────────────────────────────── */
@@ -164,6 +159,7 @@ body::before {
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  background: var(--bg-base);
 }
 
 .panel-right {
@@ -178,12 +174,12 @@ body::before {
 
 .app-header {
   height: 56px;
-  border-bottom: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-chrome);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0 24px;
-  background: var(--bg-surface);
+  background: var(--bg-chrome);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -193,12 +189,12 @@ body::before {
   font-family: var(--font-mono);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--text-accent);
+  color: #E8C07A;
   letter-spacing: 0.08em;
 }
 
 .app-header__logo span {
-  color: var(--text-secondary);
+  color: #A8845A;
 }
 
 .app-header__status {
@@ -207,15 +203,15 @@ body::before {
   gap: 8px;
   font-family: var(--font-mono);
   font-size: 0.7rem;
-  color: var(--text-muted);
+  color: #A8845A;
 }
 
 .status-dot {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 6px var(--green);
+  background: var(--grade-a);
+  box-shadow: 0 0 6px var(--grade-a);
   animation: pulse 2.5s ease-in-out infinite;
 }
 
@@ -239,9 +235,18 @@ body::before {
 .panel-section__header {
   padding: 10px 16px;
   background: var(--bg-elevated);
+  border-bottom: 1px solid var(--border-default);
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.panel-section__header .label {
+  color: var(--text-secondary);
+}
+
+.panel-section__header .panel-section__count {
+  color: var(--text-muted);
 }
 
 .panel-section__header .label {
@@ -264,6 +269,7 @@ body::before {
   flex: 1;
   overflow-y: auto;
   padding: 10px;
+  background: var(--bg-base);
 }
 
 /* ─── Cert card ──────────────────────────────────────────────────────────────── */
@@ -292,8 +298,8 @@ body::before {
 }
 
 .cert-card:hover {
-  border-color: var(--border-strong);
-  background: var(--bg-hover);
+  border-color: var(--text-accent);
+  background: var(--bg-elevated);
 }
 
 .cert-card--in-roadmap {
@@ -609,11 +615,11 @@ body::before {
   border: 2px solid;
 }
 
-.grade-display--A { color: var(--grade-a); border-color: var(--grade-a); background: rgba(0,   230, 118, 0.08); }
-.grade-display--B { color: var(--grade-b); border-color: var(--grade-b); background: rgba(105, 240, 174, 0.08); }
-.grade-display--C { color: var(--grade-c); border-color: var(--grade-c); background: rgba(255, 235, 59,  0.08); }
-.grade-display--D { color: var(--grade-d); border-color: var(--grade-d); background: rgba(255, 152, 0,   0.08); }
-.grade-display--F { color: var(--grade-f); border-color: var(--grade-f); background: rgba(255, 82,  82,  0.08); }
+.grade-display--A { color: var(--grade-a); border-color: var(--grade-a); background: rgba(46,  125, 50,  0.10); }
+.grade-display--B { color: var(--grade-b); border-color: var(--grade-b); background: rgba(85,  139, 47,  0.10); }
+.grade-display--C { color: var(--grade-c); border-color: var(--grade-c); background: rgba(196, 123, 46,  0.10); }
+.grade-display--D { color: var(--grade-d); border-color: var(--grade-d); background: rgba(191, 96,  0,   0.10); }
+.grade-display--F { color: var(--grade-f); border-color: var(--grade-f); background: rgba(176, 58,  42,  0.10); }
 .grade-display--pending {
   color: var(--text-muted);
   border-color: var(--border-default);
@@ -805,6 +811,7 @@ body::before {
 
 .fetch-panel {
   padding: 12px;
+  background: var(--bg-base);
 }
 
 .fetch-panel__row {
