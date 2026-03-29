@@ -464,7 +464,7 @@ body::before {
 
 .roadmap-item {
   position: relative;
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-md);
   padding: 12px 14px;
   background: var(--bg-surface);
@@ -486,8 +486,9 @@ body::before {
   left: 0;
   top: 0;
   bottom: 0;
-  width: 3px;
+  width: 4px;
   background: var(--track-color, var(--border-strong));
+  opacity: 1;
 }
 
 .roadmap-item--owned {
@@ -503,11 +504,11 @@ body::before {
   font-size: 0.6rem;
   font-weight: 700;
   letter-spacing: 0.1em;
-  color: var(--green);
-  border: 1px solid rgba(0, 230, 118, 0.3);
+  color: var(--grade-a);
+  border: 1px solid var(--grade-a);
   padding: 2px 5px;
   border-radius: var(--radius-sm);
-  background: var(--green-muted);
+  background: rgba(46, 125, 50, 0.08);
 }
 
 .roadmap-item__index {
@@ -586,7 +587,7 @@ body::before {
 /* ─── Score panel ────────────────────────────────────────────────────────────── */
 
 .score-panel {
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   background: var(--bg-surface);
   overflow: hidden;
@@ -595,7 +596,7 @@ body::before {
 .score-panel__header {
   padding: 14px 20px;
   background: var(--bg-elevated);
-  border-bottom: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-strong);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -668,17 +669,17 @@ body::before {
   font-family: var(--font-mono);
   font-size: 0.75rem;
   font-weight: 700;
-  color: var(--text-primary);
+  color: var(--text-secondary);
   width: 28px;
   text-align: right;
 }
 
 .score-panel__narrative {
   padding: 16px 20px;
-  border-top: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-strong);
   font-size: 0.875rem;
   line-height: 1.7;
-  color: var(--text-secondary);
+  color: var(--text-primary);
 }
 
 .score-panel__calculating {
@@ -686,10 +687,10 @@ body::before {
   display: flex;
   align-items: center;
   gap: 10px;
-  color: var(--text-muted);
+  color: var(--text-secondary);
   font-size: 0.8rem;
   font-family: var(--font-mono);
-  border-top: 1px solid var(--border-default);
+  border-top: 1px solid var(--border-strong);
 }
 
 /* ─── Spinner ────────────────────────────────────────────────────────────────── */
@@ -697,8 +698,8 @@ body::before {
 .spinner {
   width: 14px;
   height: 14px;
-  border: 2px solid var(--border-strong);
-  border-top-color: var(--green);
+  border: 2px solid var(--border-default);
+  border-top-color: var(--text-accent);
   border-radius: 50%;
   animation: spin 0.7s linear infinite;
   flex-shrink: 0;
@@ -713,10 +714,10 @@ body::before {
 .summary-bar {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  border: 1px solid var(--border-default);
+  border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  background: var(--border-default);
+  background: var(--border-strong);
   gap: 1px;
 }
 
@@ -871,7 +872,7 @@ body::before {
   content: '';
   flex: 1;
   height: 1px;
-  background: var(--border-default);
+  background: var(--border-strong);
 }
 
 /* ─── Track color utilities ──────────────────────────────────────────────────── */
