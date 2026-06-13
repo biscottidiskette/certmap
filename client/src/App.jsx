@@ -12,8 +12,7 @@ import {
   loadOwned,
   saveOwned,
 } from "./store/localStorage"
-import { gradeRoadmap } from "./api/certmapApi"
-import { healthCheck } from "./api/certmapApi"
+import { gradeRoadmap, healthCheck } from "./api/certmapApi"
 
 import CertCard         from "./components/CertCard"
 import RoadmapItem      from "./components/RoadmapItem"

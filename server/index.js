@@ -42,7 +42,7 @@ app.use("/api/grade-roadmap", gradeRoadmapRouter)
 app.get("/api/health", (req, res) => {
   res.json({
     status: "ok",
-    model: process.env.NODE_ENV ?? "development",
+    env: process.env.NODE_ENV ?? "development",
     timestamp: new Date().toISOString(),
   })
 })
